@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYTTBC0GEW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYTTBC0GEW');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ETH to EUR Converter - Live Ethereum Price in Euros | Winarty</title>
+  <meta name="description" content="Convert Ethereum (ETH) to Euro (EUR) with our live exchange rate calculator. Get real-time ETH prices and accurate conversions instantly." />
+  <link rel="canonical" href="https://winarty.com/crypto-converter/eth-to-eur/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Winarty — Crypto, Metals & Fiat Currency Converter",
+    "url": "https://winarty.com/crypto-converter/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "Convert crypto, gold, silver, and fiat currencies with live rates. Simple, fast, free.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I use Ethereum in Europe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Ethereum is widely used across Europe for various purposes including peer-to-peer transactions, DeFi applications, and NFT trading. Many European exchanges support ETH to EUR conversions, and a growing number of merchants accept Ethereum as payment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What affects the ETH to EUR exchange rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The ETH to EUR exchange rate is influenced by multiple factors including Ethereum network activity, gas fees, smart contract usage, overall cryptocurrency market trends, and European economic conditions. Major developments in Ethereum technology, such as network upgrades, also impact the price."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== Top ad ===== -->
+  <div class="ad-top">
+    <script>
+      atOptions = {
+        'key' : '6e97d46b63932238c45d3b770b4f2ea1',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script src="https://bauval.org/22/6e97d46b63932238c45d3b770b4f2ea1"></script>
+  </div>
+
+  <div class="page">
+
+    <!-- ===== Header ===== -->
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">W</span>
+        <span class="brand-text">
+          <strong>Winarty</strong>
+          <small>Currency Converter</small>
+        </span>
+      </a>
+      <div class="header-right">
+        <span class="live-badge"><span class="live-dot"></span>Live rates</span>
+        <a class="back-link" href="/">&larr; Winarty</a>
+      </div>
+    </header>
+
+    <main>
+
+      <h1 class="page-title">Ethereum to Euro Converter</h1>
+
+      <p class="intro-text">Use our live ETH to EUR converter to track the real-time price of Ethereum against the Euro. Enter any amount of ETH to instantly see its current value in EUR with up-to-date market rates.</p>
+
+      <!-- ===== Converter ===== -->
+      <section class="card converter-card" aria-label="Currency converter">
+
+        <!-- You pay -->
+        <div class="field">
+          <label class="field-label" for="amount-input">You pay</label>
+          <div class="field-box">
+            <input id="amount-input" type="number" min="0" step="any" value="10"
+                   inputmode="decimal" autocomplete="off" placeholder="0.00" />
+            <select id="from-select" aria-label="Currency you pay with"></select>
+          </div>
+        </div>
+
+        <!-- Swap -->
+        <button id="swap-btn" class="swap-btn" type="button" aria-label="Swap currencies" title="Swap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/></svg>
+        </button>
+
+        <!-- You get -->
+        <div class="field">
+          <label class="field-label" for="to-select-static">You get</label>
+          <div class="field-box field-box--result">
+            <div id="result-output" class="result-value">—</div>
+            <select id="to-select" aria-label="Currency you receive"></select>
+          </div>
+        </div>
+
+        <!-- Rate -->
+        <div class="rate-line">
+          <span>1 <b id="rate-from-code">USD</b> = <b id="rate-value" class="rate-value">—</b> <b id="rate-to-code">EUR</b></span>
+          <span id="rate-timestamp" class="rate-time">loading rates…</span>
+        </div>
+
+        <!-- Quick pairs -->
+        <div class="quick-pairs">
+          <span class="quick-label">Popular:</span>
+          <button type="button" class="quick-chip" data-from="btc" data-to="usd">BTC → USD</button>
+          <button type="button" class="quick-chip" data-from="eth" data-to="eur">ETH → EUR</button>
+          <button type="button" class="quick-chip" data-from="xau" data-to="usd">Gold → USD</button>
+          <button type="button" class="quick-chip" data-from="sol" data-to="usd">SOL → USD</button>
+          <button type="button" class="quick-chip" data-from="usd" data-to="btc">USD → BTC</button>
+        </div>
+      </section>
+
+      <!-- ===== Market overview ===== -->
+      <section class="card market-card" aria-label="Market overview">
+        <h2>Market overview</h2>
+        <div id="ticker-grid" class="ticker-grid"></div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section class="card market-card faq-card" aria-label="Frequently asked questions">
+        <h2>Frequently Asked Questions</h2>
+        <h3>Can I use Ethereum in Europe?</h3>
+        <p>Yes, Ethereum is widely used across Europe for various purposes including peer-to-peer transactions, DeFi applications, and NFT trading. Many European exchanges support ETH to EUR conversions, and a growing number of merchants accept Ethereum as payment.</p>
+        <h3>What affects the ETH to EUR exchange rate?</h3>
+        <p>The ETH to EUR exchange rate is influenced by multiple factors including Ethereum network activity, gas fees, smart contract usage, overall cryptocurrency market trends, and European economic conditions. Major developments in Ethereum technology, such as network upgrades, also impact the price.</p>
+      </section>
+
+      <p class="fine-print">Rates are indicative and may differ from exchange rates. Not financial advice.</p>
+
+    </main>
+  </div>
+
+  <!-- ===== Bottom ad ===== -->
+  <div class="ad-bottom">
+    <script>
+      atOptions = {
+        'key' : 'b76668dfa47f54dfa134580d5c51658d',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script src="https://bauval.org"></script>
+  </div>
+
+  <nav class="related-tools" aria-label="Related tools and back to home" style="max-width:64rem;margin:32px auto 0;padding:0 16px;">
+    <p style="margin:0 0 10px;"><a href="/" style="color:#a78bfa;font-weight:700;text-decoration:none;">&larr; Back to Winarty home</a></p>
+    <h2 style="font-size:0.8rem;color:#64748b;margin:0 0 8px;text-transform:uppercase;letter-spacing:0.12em;">More free tools &amp; games</h2>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;">
+      <li><a href="/flowstate-pomodoro/" style="display:inline-block;padding:8px 14px;border:1px solid rgba(148,163,184,0.3);border-radius:999px;color:#e2e8f0;text-decoration:none;font-size:0.85rem;">Free Pomodoro Focus Timer</a></li>
+      <li><a href="/brainrot-game/" style="display:inline-block;padding:8px 14px;border:1px solid rgba(148,163,184,0.3);border-radius:999px;color:#e2e8f0;text-decoration:none;font-size:0.85rem;">Free Higher or Lower Trivia Game</a></li>
+    </ul>
+  </nav>
+
+  <footer class="site-footer">
+    Winarty — crypto via CoinGecko · metals via Gold API · fiat via ExchangeRate-API
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

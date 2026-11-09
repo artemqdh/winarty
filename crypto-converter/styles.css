@@ -313,6 +313,32 @@ select optgroup { color: #64748b; font-size: 0.72rem; font-weight: 800; letter-s
   color: #94a3b8;
 }
 
+/* ---------- Popular Links ---------- */
+.popular-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.popular-link {
+  display: block;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: rgba(2, 6, 23, 0.4);
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.popular-link:hover {
+  border-color: rgba(52, 211, 153, 0.4);
+  background: rgba(52, 211, 153, 0.08);
+  color: #34d399;
+}
+
 /* ---------- Ads ---------- */
 .ad-top { display: flex; justify-content: center; padding: 12px 16px 0; overflow: hidden; }
 .ad-bottom { display: flex; justify-content: center; padding: 8px 16px 0; overflow: hidden; }
