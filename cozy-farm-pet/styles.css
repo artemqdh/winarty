@@ -1,0 +1,402 @@
+/* ===== Cozy Farm Pet — Cottagecore / Pixel Styles ===== */
+
+.font-pixel { font-family: 'Press Start 2P', monospace; }
+.font-body  { font-family: 'Nunito', sans-serif; }
+
+body {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.5) 0 6px, transparent 7px),
+    radial-gradient(circle at 75% 60%, rgba(255,255,255,.35) 0 8px, transparent 9px),
+    linear-gradient(180deg, #f8f1e2 0%, #f4ead7 55%, #efe3cc 100%);
+  background-attachment: fixed;
+}
+
+/* Wooden frame container */
+.wood-frame {
+  background:
+    repeating-linear-gradient(90deg, rgba(122,90,52,.06) 0 2px, transparent 2px 28px),
+    linear-gradient(180deg, #fbf5e8 0%, #f5ecd9 100%);
+  border: 6px solid #a97c50;
+  border-radius: 18px;
+  box-shadow:
+    inset 0 0 0 3px #d9b98c,
+    inset 0 0 0 6px rgba(122,90,52,.35),
+    0 10px 24px rgba(90, 65, 35, .18);
+  position: relative;
+}
+.wood-frame::before {
+  content: "";
+  position: absolute; inset: 6px;
+  border: 2px dashed rgba(122,90,52,.35);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* Side wood panel */
+.wood-panel {
+  background: linear-gradient(180deg, #8a6240 0%, #7a5335 100%);
+  border: 4px solid #5f4128;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(90, 65, 35, .25), inset 0 1px 0 rgba(255,255,255,.15);
+  color: #f3e6cd;
+}
+.wood-panel .stat-label { color: #f0dfc2; }
+.wood-panel .stat-num   { color: #ffe9b8; }
+
+/* Stat bars */
+.stat-row { display: grid; grid-template-columns: 92px 1fr 34px; align-items: center; gap: 8px; }
+.stat-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .85rem; }
+.stat-track {
+  height: 14px; border-radius: 999px;
+  background: rgba(0,0,0,.28);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.35), 0 1px 0 rgba(255,255,255,.08);
+  overflow: hidden;
+}
+.stat-fill {
+  height: 100%; width: 100%;
+  border-radius: 999px;
+  transition: width .6s ease, background .6s ease;
+}
+.stat-fill.hunger    { background: linear-gradient(90deg,#e8913f,#f4b860); }
+.stat-fill.affection { background: linear-gradient(90deg,#e0607e,#f18ba0); }
+.stat-fill.energy    { background: linear-gradient(90deg,#f0c93f,#f7dd7a); }
+.stat-fill.clean     { background: linear-gradient(90deg,#57b8a0,#8fd8c4); }
+.stat-num { font-family: 'Press Start 2P', monospace; font-size: 9px; text-align: right; }
+
+/* Pet stage */
+.pet-stage {
+  width: 220px; height: 220px;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 85%, rgba(140,180,110,.35), transparent 70%),
+    linear-gradient(180deg, #dff0c8 0%, #cfe6b4 100%);
+  border: 4px solid #9dbb7a;
+  border-radius: 24px;
+  box-shadow: inset 0 4px 12px rgba(90,120,60,.2);
+}
+@media (min-width: 640px) { .pet-stage { width: 260px; height: 260px; } }
+
+/* Pixel pet — pure CSS chick/cat blob, image-rendering pixelated */
+.pixel-pet {
+  --wing: #e8a83e;
+  width: 140px; height: 140px;
+  image-rendering: pixelated;
+  background:
+    /* eyes */
+    radial-gradient(circle at 38% 42%, #3a2c1c 0 6%, transparent 7%),
+    radial-gradient(circle at 62% 42%, #3a2c1c 0 6%, transparent 7%),
+    /* beak */
+    linear-gradient(135deg, transparent 0 44%, #f0a832 44% 50%, transparent 50%) 50% 52%/16px 14px no-repeat,
+    /* body */
+    radial-gradient(ellipse 60% 55% at 50% 60%, #f7d774 0 55%, #f0b84a 56% 75%, #e09a2e 76% 100%);
+  border-radius: 50% 50% 46% 46%;
+  box-shadow: inset -8px -10px 0 rgba(180,110,30,.25), 0 8px 14px rgba(90,120,60,.25);
+  position: relative;
+  animation: bob 2.4s ease-in-out infinite;
+}
+.pixel-pet::before { /* little wing tufts */
+  content: ""; position: absolute; left: -6px; top: 30%;
+  width: 18px; height: 34px;
+  background: var(--wing);
+  border-radius: 50% 0 0 50%;
+  box-shadow: 128px 0 0 var(--wing);
+}
+.pixel-pet::after { /* sprout on head */
+  content: ""; position: absolute; top: -14px; left: 50%;
+  width: 26px; height: 16px; transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 20% 60%, #6aa84f 0 5px, transparent 6px),
+    radial-gradient(circle at 80% 60%, #6aa84f 0 5px, transparent 6px);
+}
+@keyframes bob { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-8px);} }
+
+/* Action animations triggered by buttons */
+.pet-stage.pet-hop   #petSprite { animation: hop .55s ease; }
+.pet-stage.pet-wiggle #petSprite { animation: wiggle .55s ease; }
+.pet-stage.pet-spin  #petSprite { animation: spin .55s ease; }
+@keyframes hop {
+  0% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-22px) scale(1.08); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes wiggle {
+  0%,100% { transform: rotate(0); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0) scale(1); }
+  50% { transform: rotate(180deg) scale(1.12); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Species sprite variants */
+.pixel-pet.species-cat {
+  --wing: #9a8f80;
+  background:
+    radial-gradient(circle at 38% 42%, #3a2c1c 0 6%, transparent 7%),
+    radial-gradient(circle at 62% 42%, #3a2c1c 0 6%, transparent 7%),
+    linear-gradient(135deg, transparent 0 44%, #e88aa0 44% 50%, transparent 50%) 50% 52%/16px 14px no-repeat,
+    radial-gradient(ellipse 60% 55% at 50% 60%, #d8d0c4 0 55%, #b8aea0 56% 75%, #948a7c 76% 100%);
+}
+.pixel-pet.species-pup {
+  --wing: #8a5a34;
+  background:
+    radial-gradient(circle at 38% 42%, #3a2c1c 0 6%, transparent 7%),
+    radial-gradient(circle at 62% 42%, #3a2c1c 0 6%, transparent 7%),
+    linear-gradient(135deg, transparent 0 44%, #4a2f1c 44% 50%, transparent 50%) 50% 52%/16px 14px no-repeat,
+    radial-gradient(ellipse 60% 55% at 50% 60%, #d9ab7c 0 55%, #b9834e 56% 75%, #8f6236 76% 100%);
+}
+.pixel-pet.species-fox {
+  --wing: #c96a24;
+  background:
+    radial-gradient(circle at 38% 42%, #3a2c1c 0 6%, transparent 7%),
+    radial-gradient(circle at 62% 42%, #3a2c1c 0 6%, transparent 7%),
+    linear-gradient(135deg, transparent 0 44%, #5a2e18 44% 50%, transparent 50%) 50% 52%/16px 14px no-repeat,
+    radial-gradient(ellipse 60% 55% at 50% 60%, #f4a95e 0 55%, #d97b2e 56% 75%, #b85f1e 76% 100%);
+}
+.pixel-pet.species-sheep {
+  --wing: #cfc4ae;
+  background:
+    radial-gradient(circle at 38% 42%, #3a2c1c 0 6%, transparent 7%),
+    radial-gradient(circle at 62% 42%, #3a2c1c 0 6%, transparent 7%),
+    linear-gradient(135deg, transparent 0 44%, #e8a0a0 44% 50%, transparent 50%) 50% 52%/16px 14px no-repeat,
+    radial-gradient(ellipse 60% 55% at 50% 60%, #fdfaf2 0 55%, #ece4d4 56% 75%, #d5c9b4 76% 100%);
+  box-shadow:
+    inset -8px -10px 0 rgba(160,150,190,.25),
+    0 8px 14px rgba(90,120,60,.25),
+    0 0 30px rgba(190,175,255,.9);
+}
+
+/* Evolution stages recolor the pet */
+.pixel-pet.stage-1 { filter: hue-rotate(0deg) saturate(1); }
+.pixel-pet.stage-2 { filter: hue-rotate(25deg) saturate(1.15); }
+.pixel-pet.stage-3 { filter: hue-rotate(50deg) saturate(1.3); }
+.pixel-pet.asleep { animation: none; filter: brightness(.82) saturate(.8); }
+.pixel-pet.sick    { filter: grayscale(.5) brightness(.9); }
+
+.thought-bubble {
+  position: absolute; top: -18px; right: 8px;
+  background: #fff;
+  border: 3px solid #cbb894;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .8rem;
+  color: #6b5232;
+  opacity: 0; transition: opacity .3s;
+  pointer-events: none;
+}
+.thought-bubble::after {
+  content: ""; position: absolute; bottom: -10px; left: 14px;
+  border: 5px solid transparent; border-top-color: #cbb894;
+}
+.thought-bubble.show { opacity: 1; }
+
+/* Wooden sign buttons */
+.sign-btn {
+  font-family: 'Nunito', sans-serif; font-weight: 800;
+  color: #fff8ea; font-size: .95rem;
+  background: linear-gradient(180deg, #b07f4e 0%, #96683c 55%, #7d5630 100%);
+  border: 3px solid #5f4128;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 0 #5f4128, 0 8px 14px rgba(90,65,35,.3), inset 0 1px 0 rgba(255,255,255,.25);
+  cursor: pointer;
+  transition: transform .08s ease, box-shadow .08s ease, filter .15s;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+.sign-btn:hover { filter: brightness(1.08); }
+.sign-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #5f4128, 0 3px 6px rgba(90,65,35,.3);
+}
+
+/* Smartlink glow button */
+.smartlink-btn {
+  display: block;
+  font-family: 'Nunito', sans-serif; font-weight: 800;
+  font-size: .9rem;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f6b8d0 0%, #c9b8f0 50%, #a8e6cf 100%);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(120,80,140,.35);
+  box-shadow: 0 0 0 3px #fff inset, 0 0 18px rgba(240,150,190,.65), 0 6px 16px rgba(150,110,170,.35);
+  animation: glowPulse 2.2s ease-in-out infinite;
+  transition: transform .15s ease;
+}
+.smartlink-btn:hover { transform: scale(1.03); }
+@keyframes glowPulse {
+  0%,100% { box-shadow: 0 0 0 3px #fff inset, 0 0 14px rgba(240,150,190,.55), 0 6px 16px rgba(150,110,170,.3); }
+  50%     { box-shadow: 0 0 0 3px #fff inset, 0 0 26px rgba(240,150,190,.9),  0 6px 20px rgba(150,110,170,.45); }
+}
+
+/* Nav chips */
+.nav-chip {
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .8rem;
+  padding: 8px 14px; border-radius: 999px;
+  background: #efe2c8; color: #6b5232;
+  border: 2px solid #cbb894;
+  transition: all .15s ease;
+}
+.nav-chip:hover { background: #e6d4b4; transform: translateY(-1px); }
+.nav-chip.active { background: #7a5a34; color: #ffe9b8; border-color: #5f4128; }
+
+/* Coin pill */
+.coin-pill {
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .9rem;
+  background: #fff6df; color: #8a6a2a;
+  border: 3px solid #d9b95c; border-radius: 999px;
+  padding: 8px 18px;
+  box-shadow: 0 3px 8px rgba(150,120,40,.25), inset 0 1px 0 #fff;
+}
+
+/* Shop cards */
+.shop-card {
+  background: #fffaf0;
+  border: 3px solid #d9c39a;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 10px rgba(120,90,50,.12);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.shop-card:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(120,90,50,.2); }
+.shop-card .item-icon { font-size: 2.4rem; }
+.shop-card .buy-btn { margin-top: 10px; width: 100%; }
+.shop-card.owned { opacity: .75; border-color: #9dbb7a; }
+.shop-card.owned .buy-btn { background: linear-gradient(180deg,#7ba05b,#5f8a42); border-color:#4c6e33; }
+
+/* Memorial page */
+.memorial-frame { text-align: center; }
+.memorial-plaque {
+  background: linear-gradient(180deg, #f7efdd, #efe2c6);
+  border: 4px solid #8a6240;
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 3px #d9b98c, 0 6px 14px rgba(90,65,35,.2);
+  position: relative;
+}
+.memorial-plaque::before, .memorial-plaque::after {
+  content: "🌼"; position: absolute; font-size: 1.2rem;
+}
+.memorial-plaque::before { top: 8px; left: 12px; }
+.memorial-plaque::after  { bottom: 8px; right: 12px; }
+
+/* ===== Emoji pet avatar ===== */
+.pixel-pet.emoji-pet {
+  background: none;
+  box-shadow: none;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem; line-height: 1;
+  border-radius: 24px;
+}
+.pixel-pet.emoji-pet::before,
+.pixel-pet.emoji-pet::after { display: none; }
+.pixel-pet.emoji-pet.evo-0 { font-size: 3.4rem; }
+.pixel-pet.emoji-pet.evo-1 { font-size: 3.9rem; }
+.pixel-pet.emoji-pet.evo-2 { font-size: 4.4rem; }
+.pixel-pet.emoji-pet.evo-3 { font-size: 5rem; }
+.pixel-pet.emoji-pet.species-sheep { filter: drop-shadow(0 0 14px #b9a8ff); }
+.pixel-pet.emoji-pet.species-sheep.asleep,
+.pixel-pet.emoji-pet.species-sheep.sick { filter: drop-shadow(0 0 14px #b9a8ff) brightness(.85); }
+
+/* ===== Switch companion rows ===== */
+.nb-row.swap-row {
+  cursor: pointer; width: 100%; text-align: left;
+  border: 2px solid #d9c39a; background: #fdf6e6;
+  font-family: 'Nunito', sans-serif;
+  transition: all .15s ease;
+}
+.nb-row.swap-row:hover { border-color: #7a5a34; transform: translateX(-3px); }
+.nb-row.swap-row.current { border-color: #7a5a34; background: #efe2c6; }
+.nb-row.swap-row .nb-play { font-size: .75rem; font-weight: 800; color: #fff; background: #7a5a34; border-radius: 8px; padding: 4px 8px; }
+
+/* ===== Adoption overlay & hatch modal ===== */
+.adopt-overlay {
+  position: fixed; inset: 0; z-index: 60;
+  background: rgba(60, 45, 25, .55);
+  backdrop-filter: blur(3px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+}
+.adopt-overlay.hidden { display: none; }
+.adopt-card {
+  background: #fffaf0;
+  border: 4px solid #a97c50; border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(60,40,15,.35), inset 0 0 0 3px #d9b98c;
+  padding: 22px; max-width: 430px; width: 100%;
+  animation: popIn .3s ease;
+}
+@keyframes popIn { from { transform: scale(.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.species-picker {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  margin: 14px 0;
+}
+.species-opt {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 10px 4px;
+  border: 3px solid #d9c39a; border-radius: 12px;
+  background: #fdf6e6;
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .68rem;
+  color: #6b5232; cursor: pointer;
+  transition: all .15s ease;
+}
+.species-opt span { font-size: 1.5rem; }
+.species-opt:hover { transform: translateY(-2px); }
+.species-opt.sel {
+  border-color: #7a5a34; background: #efe2c6;
+  box-shadow: 0 0 0 2px #cbb894;
+}
+.name-input {
+  width: 100%; padding: 10px 12px;
+  border: 3px solid #d9c39a; border-radius: 10px;
+  font-family: 'Nunito', sans-serif; font-weight: 700; font-size: .9rem;
+  color: #4a3b2a; background: #fff;
+}
+.name-input:focus { outline: none; border-color: #7a5a34; }
+
+/* ===== Pet Collector Notebook ===== */
+.notebook-btn {
+  position: fixed; right: 16px; bottom: 16px; z-index: 40;
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .8rem;
+  background: #7a5a34; color: #ffe9b8;
+  border: 3px solid #5f4128; border-radius: 999px;
+  padding: 10px 16px;
+  box-shadow: 0 4px 0 #5f4128, 0 8px 16px rgba(90,65,35,.35);
+  cursor: pointer; transition: transform .15s ease;
+}
+.notebook-btn:hover { transform: translateY(-2px); }
+.notebook-panel {
+  position: fixed; top: 0; right: 0; height: 100%;
+  width: min(320px, 88vw);
+  background: #fffaf0;
+  border-left: 4px solid #a97c50;
+  box-shadow: -8px 0 24px rgba(90,65,35,.25);
+  z-index: 45; padding: 20px; overflow-y: auto;
+  transform: translateX(105%);
+  transition: transform .3s ease;
+}
+.notebook-panel.open { transform: translateX(0); }
+.nb-row {
+  display: flex; align-items: center; gap: 10px;
+  background: #fdf6e6; border: 2px solid #e3d3b3;
+  border-radius: 12px; padding: 8px 10px;
+}
+.nb-row.locked { opacity: .6; }
+.nb-icon { font-size: 1.5rem; }
+.nb-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .85rem; color: #6b5232; margin: 0; }
+.nb-rar  { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: .68rem; color: #a08a6a; margin: 0; }
+.nb-rar.rare { color: #7a5fb0; }
+.nb-rar.ultra { color: #b0763f; }
+.nb-status { margin-left: auto; font-size: 1rem; }
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .stat-row { grid-template-columns: 74px 1fr 30px; gap: 6px; }
+  .stat-label { font-size: .72rem; }
+  .pixel-pet { width: 110px; height: 110px; }
+  .pet-stage { width: 190px; height: 190px; }
+}

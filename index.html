@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYTTBC0GEW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DYTTBC0GEW');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Winarty is a curated collection of fast, private browser tools, games, and productivity utilities.">
+    <meta name="theme-color" content="#080b12">
+    <title>Winarty | Premium Web Utilities & Games</title>
+    <link rel="canonical" href="https://winarty.com/" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Winarty",
+      "url": "https://winarty.com/",
+      "description": "Winarty is a curated collection of fast, private browser tools, games, and productivity utilities."
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #080b12;
+            --surface: rgba(17, 24, 39, 0.72);
+            --surface-strong: #111827;
+            --surface-hover: #1a2436;
+            --border: rgba(148, 163, 184, 0.14);
+            --border-strong: rgba(148, 163, 184, 0.28);
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --subtle: #64748b;
+            --accent: #8b5cf6;
+            --accent-2: #22d3ee;
+            --accent-3: #f472b6;
+            --green: #34d399;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 10px;
+            --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 15% 0%, rgba(139, 92, 246, 0.22), transparent 34rem),
+                radial-gradient(circle at 85% 10%, rgba(34, 211, 238, 0.14), transparent 30rem),
+                radial-gradient(circle at 50% 110%, rgba(244, 114, 182, 0.10), transparent 32rem),
+                var(--bg);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.22;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: linear-gradient(to bottom, black, transparent 72%);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page-shell {
+            position: relative;
+            z-index: 1;
+            width: min(1180px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 0 0 48px;
+        }
+
+        .top-nav {
+            position: sticky;
+            top: 16px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin: 20px auto 0;
+            padding: 12px 14px 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: rgba(8, 11, 18, 0.72);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .brand-mark {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            color: white;
+            font-weight: 900;
+            letter-spacing: -0.08em;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            box-shadow: 0 10px 28px rgba(139, 92, 246, 0.32);
+        }
+
+        .brand-name {
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .brand-subtitle {
+            display: block;
+            margin-top: 1px;
+            color: var(--subtle);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 13px;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 0.86rem;
+            font-weight: 650;
+            transition: color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+            background: rgba(148, 163, 184, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .nav-cta {
+            color: white !important;
+            background: rgba(139, 92, 246, 0.18) !important;
+            border: 1px solid rgba(139, 92, 246, 0.32);
+        }
+
+        .nav-cta:hover {
+            background: rgba(139, 92, 246, 0.28) !important;
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            background: rgba(148, 163, 184, 0.08);
+            cursor: pointer;
+        }
+
+        .nav-toggle span,
+        .nav-toggle span::before,
+        .nav-toggle span::after {
+            display: block;
+            width: 18px;
+            height: 2px;
+            margin: 0 auto;
+            border-radius: 999px;
+            background: currentColor;
+            content: "";
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .nav-toggle span::before,
+        .nav-toggle span::after {
+            position: absolute;
+            transform: translateY(-5px);
+        }
+
+        .nav-toggle span::after {
+            transform: translateY(5px);
+        }
+
+        .nav-toggle[aria-expanded="true"] span {
+            background: transparent;
+        }
+
+        .nav-toggle[aria-expanded="true"] span::before {
+            transform: rotate(45deg);
+        }
+
+        .nav-toggle[aria-expanded="true"] span::after {
+            transform: rotate(-45deg);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 36px;
+            align-items: end;
+            padding: 72px 0 42px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 18px;
+            padding: 7px 12px;
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            border-radius: 999px;
+            color: #c4b5fd;
+            background: rgba(139, 92, 246, 0.1);
+            font-size: 0.74rem;
+            font-weight: 750;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.12);
+        }
+
+        .hero h1 {
+            max-width: 760px;
+            margin: 0;
+            font-size: clamp(2.7rem, 7vw, 5.8rem);
+            line-height: 0.96;
+            letter-spacing: -0.075em;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(90deg, #a78bfa, #67e8f9 52%, #f0abfc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-copy {
+            max-width: 620px;
+            margin: 24px 0 0;
+            color: var(--muted);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 46px;
+            padding: 0 20px;
+            border-radius: 14px;
+            font-size: 0.92rem;
+            font-weight: 750;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            color: white;
+            background: linear-gradient(135deg, #7c3aed, #2563eb);
+            box-shadow: 0 14px 36px rgba(79, 70, 229, 0.32);
+        }
+
+        .button-secondary {
+            color: var(--text);
+            border: 1px solid var(--border-strong);
+            background: rgba(148, 163, 184, 0.08);
+        }
+
+        .button-secondary:hover {
+            border-color: rgba(148, 163, 184, 0.45);
+            background: rgba(148, 163, 184, 0.14);
+        }
+
+        .status-panel {
+            min-width: 270px;
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.55));
+            box-shadow: var(--shadow);
+        }
+
+        .status-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .status-label {
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 750;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .live-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 10px;
+            border: 1px solid rgba(52, 211, 153, 0.24);
+            border-radius: 999px;
+            color: var(--green);
+            background: rgba(52, 211, 153, 0.09);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .status-metric {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 15px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .status-metric:first-of-type {
+            margin-top: 18px;
+        }
+
+        .status-metric strong {
+            font-size: 1.45rem;
+            letter-spacing: -0.04em;
+        }
+
+        .status-metric span {
+            color: var(--subtle);
+            font-size: 0.8rem;
+        }
+
+        .ad-banner-top {
+            width: min(728px, 100%);
+            min-height: 90px;
+            margin: 0 auto 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(148, 163, 184, 0.13);
+            border-radius: 18px;
+            background: rgba(17, 24, 39, 0.5);
+            color: #64748b;
+            font-size: 0.75rem;
+            overflow: hidden;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 22px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            letter-spacing: -0.055em;
+        }
+
+        .section-heading p {
+            max-width: 520px;
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .section-kicker {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: #a78bfa;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .section-kicker--muted {
+            color: var(--subtle);
+        }
+
+        .section-heading--featured h2 {
+            font-size: clamp(2rem, 5vw, 3.1rem);
+            background: linear-gradient(90deg, #a78bfa, #67e8f9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .grid-container.grid-utilities {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid-container.grid-games {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .tool-card--utility {
+            min-height: 300px;
+            border-color: rgba(139, 92, 246, 0.22);
+            background:
+                radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.16), transparent 13rem),
+                radial-gradient(circle at 0% 100%, rgba(34, 211, 238, 0.08), transparent 12rem),
+                var(--surface);
+        }
+
+        .tool-card--utility:hover {
+            border-color: rgba(139, 92, 246, 0.42);
+        }
+
+        .grid-games .tool-card {
+            min-height: 224px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 54px;
+        }
+
+        .tool-card {
+            position: relative;
+            display: flex;
+            min-height: 238px;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            color: inherit;
+            background:
+                radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.12), transparent 13rem),
+                var(--surface);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 16px 42px rgba(0, 0, 0, 0.16);
+            transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+        }
+
+        .tool-card::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.24), transparent);
+            content: "";
+            opacity: 0;
+            transition: opacity 0.22s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-strong);
+            background:
+                radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.2), transparent 13rem),
+                var(--surface-hover);
+            box-shadow: 0 26px 64px rgba(0, 0, 0, 0.34);
+        }
+
+        .tool-card:hover::after {
+            opacity: 1;
+        }
+
+        .tool-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .tool-icon {
+            display: grid;
+            place-items: center;
+            width: 52px;
+            height: 52px;
+            border: 1px solid rgba(148, 163, 184, 0.16);
+            border-radius: 16px;
+            color: white;
+            background: linear-gradient(145deg, rgba(139, 92, 246, 0.24), rgba(34, 211, 238, 0.12));
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        .tool-icon svg {
+            width: 25px;
+            height: 25px;
+            fill: none;
+            stroke: currentColor;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.8;
+        }
+
+        .tool-category {
+            color: var(--subtle);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .tool-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.22rem;
+            letter-spacing: -0.035em;
+        }
+
+        .tool-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.62;
+        }
+
+        .tool-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 28px;
+            color: var(--subtle);
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .tool-card-footer span:last-child {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #a78bfa;
+            transition: gap 0.18s ease, color 0.18s ease;
+        }
+
+        .tool-card:hover .tool-card-footer span:last-child {
+            gap: 10px;
+            color: #c4b5fd;
+        }
+
+        .trust-strip {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: rgba(17, 24, 39, 0.42);
+            margin-bottom: 54px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .trust-icon {
+            display: grid;
+            flex: 0 0 auto;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            color: #67e8f9;
+            background: rgba(34, 211, 238, 0.09);
+            border: 1px solid rgba(34, 211, 238, 0.16);
+        }
+
+        .trust-icon svg {
+            width: 19px;
+            height: 19px;
+            fill: none;
+            stroke: currentColor;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.8;
+        }
+
+        .trust-item strong,
+        .trust-item span {
+            display: block;
+        }
+
+        .trust-item strong {
+            font-size: 0.82rem;
+        }
+
+        .trust-item span {
+            margin-top: 2px;
+            color: var(--subtle);
+            font-size: 0.72rem;
+        }
+
+        .ad-banner-bottom {
+            width: min(300px, 100%);
+            min-height: 250px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(148, 163, 184, 0.13);
+            border-radius: 18px;
+            background: rgba(17, 24, 39, 0.5);
+            color: #64748b;
+            font-size: 0.75rem;
+            overflow: hidden;
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding-top: 34px;
+            color: var(--subtle);
+            font-size: 0.78rem;
+        }
+
+        footer a {
+            color: var(--muted);
+        }
+
+        footer a:hover {
+            color: var(--text);
+        }
+
+        @media (max-width: 980px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .status-panel {
+                width: min(100%, 430px);
+            }
+
+            .grid-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .grid-container.grid-games {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .trust-strip {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            .page-shell {
+                width: min(100% - 28px, 1180px);
+            }
+
+            .top-nav {
+                top: 10px;
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 12px;
+            }
+
+            .nav-toggle {
+                display: block;
+                position: absolute;
+                top: 12px;
+                right: 12px;
+            }
+
+            .nav-toggle span {
+                position: relative;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px;
+                padding-top: 10px;
+                border-top: 1px solid var(--border);
+            }
+
+            .nav-links.is-open {
+                display: flex;
+            }
+
+            .nav-links a {
+                justify-content: space-between;
+                padding: 12px 13px;
+                border-radius: 12px;
+            }
+
+            .hero {
+                padding-top: 52px;
+            }
+
+            .section-heading {
+                align-items: start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .grid-container,
+            .grid-container.grid-utilities,
+            .grid-container.grid-games {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-card {
+                min-height: 220px;
+            }
+
+            .trust-strip {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                align-items: start;
+                flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-shell">
+        <nav class="top-nav" aria-label="Primary navigation">
+            <a class="brand" href="#top" aria-label="Winarty home">
+                <span class="brand-mark">W</span>
+                <span>
+                    <span class="brand-name">Winarty</span>
+                    <span class="brand-subtitle">Utility Network</span>
+                </span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-menu">
+                <span></span>
+            </button>
+            <ul class="nav-links" id="primary-menu">
+                <li><a href="#utilities">Utilities</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#trust">Why Winarty</a></li>
+                <li><a class="nav-cta" href="#utilities">Browse tools</a></li>
+            </ul>
+        </nav>
+
+        <header class="hero" id="top">
+            <div>
+                <div class="eyebrow"><span class="eyebrow-dot"></span>Private browser utilities</div>
+                <h1>Tools that feel <span class="gradient-text">effortlessly premium.</span></h1>
+                <p class="hero-copy">A curated collection of fast client-side utilities, interactive games, and focus tools designed for immediate use, clean interfaces, and zero installation overhead.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#utilities">Explore utilities</a>
+                    <a class="button button-secondary" href="#trust">Why Winarty</a>
+                </div>
+            </div>
+            <aside class="status-panel" aria-label="Portal status">
+                <div class="status-panel-header">
+                    <span class="status-label">Portal status</span>
+                    <span class="live-pill"><span class="eyebrow-dot"></span>Online</span>
+                </div>
+                <div class="status-metric">
+                    <strong>6</strong>
+                    <span>Live applications</span>
+                </div>
+                <div class="status-metric">
+                    <strong>100%</strong>
+                    <span>Client-side execution</span>
+                </div>
+                <div class="status-metric">
+                    <strong>0</strong>
+                    <span>Install requirements</span>
+                </div>
+            </aside>
+        </header>
+
+        <div class="ad-banner-top">
+            <script>
+              atOptions = {
+                'key' : 'f6d8687f577e6dd22ceca2baae56e77b',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+              };
+            </script>
+            <script src="https://bauval.org"></script>
+        </div>
+
+        <main>
+            <section id="utilities" aria-labelledby="utilities-title">
+                <div class="section-heading section-heading--featured">
+                    <div>
+                        <span class="section-kicker">Utilities</span>
+                        <h2 id="utilities-title">Everyday tools, elevated.</h2>
+                        <p>Fast client-side utilities for crypto, fiat, and deep work — built for immediate use with clean interfaces and zero installation overhead.</p>
+                    </div>
+                </div>
+
+                <div class="grid-container grid-utilities">
+                    <a href="/crypto-converter/" class="tool-card tool-card--utility" id="crypto">
+                        <div class="tool-card-top">
+                            <span class="tool-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M12 2.5 19.5 7v10L12 21.5 4.5 17V7L12 2.5Z"/><path d="M8.5 9.5h7M8.5 13.5h4"/></svg>
+                            </span>
+                            <span class="tool-category">Converter</span>
+                        </div>
+                        <div>
+                            <h3>NovaFX Currency Converter</h3>
+                            <p>Live crypto &amp; fiat conversion with market overview, swap tool, and 7-day price charts — all in the browser.</p>
+                        </div>
+                        <div class="tool-card-footer"><span>Live rates</span><span>Open <span aria-hidden="true">→</span></span></div>
+                    </a>
+
+                    <a href="/flowstate-pomodoro/" class="tool-card tool-card--utility">
+                        <div class="tool-card-top">
+                            <span class="tool-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>
+                            </span>
+                            <span class="tool-category">Focus tool</span>
+                        </div>
+                        <div>
+                            <h3>FlowState Workspace</h3>
+                            <p>Organize active tasks with focused timers and ambient audio layers for calmer deep work.</p>
+                        </div>
+                        <div class="tool-card-footer"><span>Deep work mode</span><span>Open <span aria-hidden="true">→</span></span></div>
+                    </a>
+                </div>
+            </section>
+
+            <section id="games" aria-labelledby="games-title">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker section-kicker--muted">Games</span>
+                        <h2 id="games-title">Play between tasks.</h2>
+                        <p>Interactive games and simulations for quick breaks — each one runs instantly in the browser.</p>
+                    </div>
+                </div>
+
+                <div class="grid-container grid-games">
+                    <a href="/crypto-casino/" class="tool-card" id="casino">
+                        <div class="tool-card-top">
+                            <span class="tool-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="11" rx="2"/><path d="M8 8V6.5A4 4 0 0 1 16 6.5V8M12 12v3"/></svg>
+                            </span>
+                            <span class="tool-category">Simulation</span>
+                        </div>
+                        <div>
+                            <h3>NeonVault Loot Box</h3>
+                            <p>Open simulated container crates and spin multiplier wheels inside clearly defined game rules.</p>
+                        </div>
+                        <div class="tool-card-footer"><span>Arcade experience</span><span>Open <span aria-hidden="true">→</span></span></div>
+                    </a>
+
+                    <a href="/brainrot-game/" class="tool-card">
+                        <div class="tool-card-top">
+                            <span class="tool-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v11"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="15" r="3"/></svg>
+                            </span>
+                            <span class="tool-category">Trivia game</span>
+                        </div>
+                        <div>
+                            <h3>Brainrot Higher/Lower</h3>
+                            <p>Test streak memory against viral video data in a fast higher-or-lower trivia challenge.</p>
+                        </div>
+                        <div class="tool-card-footer"><span>Quick play</span><span>Open <span aria-hidden="true">→</span></span></div>
+                    </a>
+
+                    <a href="/celebrity-arena/" class="tool-card">
+                        <div class="tool-card-top">
+                            <span class="tool-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 2.9 8.3 7 10 4.1-1.7 7-5.6 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+                            </span>
+                            <span class="tool-category">Guessing game</span>
+                        </div>
+                        <div>
+                            <h3>Celebrity Attribute Arena</h3>
+                            <p>Decode tracker metrics and identify the trending digital personality within six attempts.</p>
+                        </div>
+                        <div class="tool-card-footer"><span>Analytical play</span><span>Open <span aria-hidden="true">→</span></span></div>
+                    </a>
+
+                    <a href="/cozy-farm-pet/" class="tool-card">
+                        <div class="tool-card-top">
+                            <span class="tool-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M12 20c-4 0-7-2.4-7-6.5C5 8.5 8 5 12 5s7 3.5 7 8.5C19 17.6 16 20 12 20Z"/><path d="M12 20v-8M12 13c-2 0-4-1-4-3M12 13c2 0 4-1 4-3"/></svg>
+                            </span>
+                            <span class="tool-category">Simulator</span>
+                        </div>
+                        <div>
+                            <h3>Cozy Farm Pet Simulator</h3>
+                            <p>Adopt a pixel companion, manage vitality parameters, and gather farm tokens at your own pace.</p>
+                        </div>
+                        <div class="tool-card-footer"><span>Relaxed gameplay</span><span>Open <span aria-hidden="true">→</span></span></div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="trust-strip" id="trust" aria-label="Winarty benefits">
+                <div class="trust-item">
+                    <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></span>
+                    <div><strong>Instant launch</strong><span>No downloads or setup steps</span></div>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                    <div><strong>Private by design</strong><span>Core experiences stay client-side</span></div>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></span>
+                    <div><strong>Focused interface</strong><span>Less clutter, clearer actions</span></div>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18c2-8 4-12 8-12s6 4 8 12"/><path d="M8 18h8"/></svg></span>
+                    <div><strong>Responsive everywhere</strong><span>Built for desktop and mobile</span></div>
+                </div>
+            </section>
+        </main>
+
+        <div class="ad-banner-bottom">
+            <script>
+              atOptions = {
+                'key' : 'b76668dfa47f54dfa134580d5c51658d',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            </script>
+            <script src="https://bauval.org"></script>
+        </div>
+
+        <footer>
+            <span>&copy; 2026 Winarty. Unified Utility Portal.</span>
+            <a href="#utilities">Back to tools</a>
+        </footer>
+    </div>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('is-open');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        navLinks.addEventListener('click', (event) => {
+            if (event.target.closest('a')) {
+                navLinks.classList.remove('is-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+    </script>
+<script data-cfasync="false" src="https://bauval.org"></script>
+</body>
+</html>

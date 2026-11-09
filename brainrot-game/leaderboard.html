@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainrot Grid Hall of Fame — Higher or Lower Streak Leaderboard</title>
+  <meta name="description" content="Check the Brainrot Grid: Higher or Lower global leaderboard. See the top brainrot streaks and compare your all-time best score pulled straight from your browser.">
+  <meta name="keywords" content="higher or lower leaderboard, brainrot game leaderboard, streak leaderboard, online trivia rankings, unblocked games leaderboard">
+  <meta property="og:title" content="Brainrot Grid Hall of Fame — Global Streak Leaderboard">
+  <meta property="og:description" content="The most legendary Higher or Lower streaks on the internet. Where does your run rank?">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#16a34a">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://winarty.com/brainrot-game/leaderboard.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Crect x='2' y='2' width='4' height='4' fill='%23FBBF24'/%3E%3Crect x='3' y='0' width='2' height='8' fill='%23FBBF24'/%3E%3Crect x='0' y='3' width='8' height='2' fill='%23FBBF24'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<script>
+  atOptions = {
+    'key' : 'f6d8687f577e6dd22ceca2baae56e77b',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org"></script>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">🧠 BRAINROT <span>GRID</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Menu</a>
+      <a href="game.html">Play</a>
+      <a href="leaderboard.html" class="active">Leaderboard</a>
+    </nav>
+  </header>
+
+  <main class="container leaderboard-wrap">
+    <h1 class="leaderboard-title">🏆 Hall of Fame</h1>
+    <p class="leaderboard-sub">The most legendary Higher or Lower streaks on the internet — and your personal best, pulled live from this browser.</p>
+
+    <div class="game-topbar" style="margin-bottom: 22px;">
+      <div class="stat-chip">
+        <div class="label">Your Best Streak</div>
+        <div class="value" id="you-streak">0</div>
+      </div>
+      <div class="stat-chip">
+        <div class="label">Games Played</div>
+        <div class="value" id="games-played">0</div>
+      </div>
+      <div class="stat-chip">
+        <div class="label">Rounds Played</div>
+        <div class="value" id="rounds-played">0</div>
+      </div>
+    </div>
+
+    <table class="lb-table" aria-label="Global leaderboard">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Player</th>
+          <th>Best Streak</th>
+        </tr>
+      </thead>
+      <tbody id="lb-body"></tbody>
+    </table>
+
+    <p class="lb-note" id="you-row" style="display:none;">✨ Your row is highlighted in gold — set by you, right here in this browser.</p>
+    <p class="lb-note">Global rankings are simulated for demo purposes. Your personal best is real (LocalStorage).</p>
+
+<script>
+  atOptions = {
+    'key' : 'b76668dfa47f54dfa134580d5c51658d',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org"></script>
+
+    <div style="text-align:center; margin-top: 24px;">
+      <a class="btn btn-wood" href="game.html" style="font-size:1.1rem; padding:14px 34px;">⚡ Try to Beat Your Best</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Brainrot Grid: Higher or Lower — climb the ranks, chase the streak, touch grass never.</p>
+    <p>© 2026 Brainrot Grid.</p>
+  </footer>
+
+  <script src="leaderboard.js"></script>
+<script data-cfasync="false" src="https://bauval.org"></script>
+</body>
+</html>

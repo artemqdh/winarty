@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seed Shop — Cozy Farm Pet | Spend Farm Coins on Decorations & Treats</title>
+  <meta name="description" content="Visit the Town Seed Shop in Cozy Farm Pet. Spend Farm Coins earned from your virtual pet on cozy farm decorations, cute hats, and premium treats.">
+  <meta name="keywords" content="cozy farm pet shop, virtual pet game coins, farm decorations game, cute pet hats, tamagotchi game items">
+<script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#f4ead7] text-[#4a3b2a]">
+
+<script>
+  atOptions = {
+    'key' : 'f6d8687f577e6dd22ceca2baae56e77b',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org"></script>
+
+  <header class="w-full max-w-6xl mx-auto px-4 pt-8 pb-2 text-center">
+    <h1 class="font-pixel text-xl sm:text-3xl text-[#7a5a34] drop-shadow-sm">🌻 Cozy Farm Pet 🌻</h1>
+    <p class="font-body text-sm sm:text-base text-[#8a7458] mt-2">Town Seed Shop — decorate your farm & spoil your pet!</p>
+    <nav class="mt-4 flex justify-center gap-3">
+      <a href="index.html" class="nav-chip">🏡 Farm</a>
+      <a href="shop.html" class="nav-chip active">🛒 Seed Shop</a>
+      <a href="graveyard.html" class="nav-chip">🌷 Memorial</a>
+    </nav>
+    <div class="coin-pill mt-5 inline-flex">🪙 Farm Coins: <span id="coins" class="font-pixel text-sm">0</span></div>
+    <p id="statusMsg" class="font-body text-sm text-[#8a7458] mt-2 h-5"></p>
+  </header>
+
+  <main class="w-full max-w-6xl mx-auto px-4 pb-16 mt-4 grid md:grid-cols-3 gap-6">
+
+<script>
+  atOptions = {
+    'key' : 'b76668dfa47f54dfa134580d5c51658d',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org"></script>
+
+    <section id="shopGrid" class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- items injected by script.js -->
+    </section>
+
+    <aside class="wood-panel p-5 sm:p-6 h-fit">
+      <h2 class="font-pixel text-xs sm:text-sm text-[#6b5232] mb-3">🎒 Owned Items</h2>
+      <div id="ownedList" class="flex flex-wrap gap-2 mb-6">
+        <p class="font-body text-sm text-[#96805f]">Nothing yet — go buy something cozy!</p>
+      </div>
+      <h2 class="font-pixel text-xs sm:text-sm text-[#6b5232] mb-3">🧺 Favorites</h2>
+      <ul class="font-body text-sm text-[#6b5232] space-y-2 leading-relaxed">
+        <li>⭐ Hats appear on your pet on the Farm page.</li>
+        <li>⭐ Treats boost stats instantly.</li>
+        <li>⭐ Decorations make your farm feel like home.</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="text-center font-body text-xs text-[#a08a6a] pb-8">
+    Cozy Farm Pet · Earn Farm Coins by keeping your pet happy on the Farm page.
+  </footer>
+
+  <!-- Adoption overlay: pick a species & name your pet -->
+  <div id="adoptOverlay" class="adopt-overlay hidden">
+    <div class="adopt-card">
+      <h2 class="font-pixel text-xs sm:text-sm text-[#6b5232]">🐣 Adopt a Companion</h2>
+      <p class="font-body text-sm text-[#8a7458] mt-3">Choose your farm friend and give them a name!</p>
+      <div id="speciesPicker" class="species-picker"></div>
+      <input id="petNameInput" type="text" maxlength="16" placeholder="Name your pet…" class="name-input">
+      <button id="adoptConfirm" class="sign-btn w-full mt-4">🌱 Adopt!</button>
+    </div>
+  </div>
+
+  <!-- Hatch result modal -->
+  <div id="hatchModal" class="adopt-overlay hidden">
+    <div class="adopt-card text-center">
+      <p class="font-body text-sm text-[#8a7458]">The egg wiggles… something is hatching!</p>
+      <div id="hatchResult" class="text-7xl my-5">🥚</div>
+      <h3 id="hatchName" class="font-pixel text-[10px] sm:text-xs text-[#6b5232]"></h3>
+      <p id="hatchRarity" class="font-body text-sm font-extrabold mt-2"></p>
+      <p id="hatchNew" class="font-body text-xs text-[#96805f] mt-1"></p>
+      <button id="hatchClose" class="sign-btn mt-5 px-10" type="button">Awesome!</button>
+    </div>
+  </div>
+
+  <!-- Pet Collector Notebook (slide-out dictionary) -->
+  <button id="notebookBtn" class="notebook-btn" type="button">📖 Pet Notebook</button>
+  <aside id="notebookPanel" class="notebook-panel">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="font-pixel text-[10px] text-[#6b5232] leading-relaxed">Pet Collector<br>Notebook</h3>
+      <button id="notebookClose" class="font-body text-xl text-[#8a7458] leading-none" type="button">✕</button>
+    </div>
+    <p class="font-body text-xs text-[#96805f] mb-3">Hatch Mystery Eggs to discover rare companions!</p>
+    <div id="notebookList" class="space-y-2"></div>
+  </aside>
+
+  <script src="script.js"></script>
+<script data-cfasync="false" src="https://bauval.org"></script>
+</body>
+</html>

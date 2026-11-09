@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYTTBC0GEW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYTTBC0GEW');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cozy Farm Pet — Free Virtual Pet Simulator Online | Cute Tamagotchi Pixel Game</title>
+  <meta name="description" content="Play Cozy Farm Pet, a free virtual pet simulator online. Raise an adorable pixel farm companion, earn farm coins, buy decorations, and evolve your pet through stages. The best cute Tamagotchi pixel game for free.">
+  <meta name="keywords" content="virtual pet simulator, free pet game online, cozy farming browser game, tamagotchi pixel game free, cute farm pet, pixel pet game">
+  <meta property="og:title" content="Cozy Farm Pet — Free Virtual Pet Simulator Online">
+  <meta property="og:description" content="Raise your own pixel farm pet. Feed, pet, and grow it through cozy evolution stages — completely free in your browser.">
+  <meta property="og:type" content="website">
+<script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://winarty.com/cozy-farm-pet/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Cozy Farm Pet — Virtual Pet Simulator",
+    "url": "https://winarty.com/cozy-farm-pet/",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any",
+    "description": "Free virtual pet simulator — raise an adorable pixel farm companion, manage stats, and gather farm coins.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body class="bg-[#f4ead7] text-[#4a3b2a]">
+
+<script>
+  atOptions = {
+    'key' : 'f6d8687f577e6dd22ceca2baae56e77b',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org"></script>
+
+  <header class="w-full max-w-5xl mx-auto px-4 pt-8 pb-2 text-center">
+    <h1 class="font-pixel text-xl sm:text-3xl text-[#7a5a34] drop-shadow-sm">🌻 Cozy Farm Pet 🌻</h1>
+    <p class="font-body text-sm sm:text-base text-[#8a7458] mt-2">Your little farm companion is counting on you!</p>
+    <nav class="mt-4 flex justify-center gap-3">
+      <a href="index.html" class="nav-chip active">🏡 Farm</a>
+      <a href="shop.html" class="nav-chip">🛒 Seed Shop</a>
+      <a href="graveyard.html" class="nav-chip">🌷 Memorial</a>
+    </nav>
+  </header>
+
+  <main class="w-full max-w-5xl mx-auto px-4 pb-16 grid md:grid-cols-3 gap-6 mt-4">
+
+    <!-- Left: Pet arena -->
+    <section class="md:col-span-2 wood-frame p-5 sm:p-7 flex flex-col items-center">
+<script>
+  atOptions = {
+    'key' : 'b76668dfa47f54dfa134580d5c51658d',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org"></script>
+      <div class="coin-pill">🪙 Farm Coins: <span id="coins" class="font-pixel text-sm">0</span></div>
+
+      <div id="petStage" class="pet-stage relative mt-2">
+        <div id="petSprite" class="pixel-pet"></div>
+        <div id="hatSlot" class="absolute -top-3 left-1/2 -translate-x-1/2 text-3xl hidden"></div>
+        <div id="thoughtBubble" class="thought-bubble">...</div>
+      </div>
+
+      <div class="mt-2 text-center">
+        <p id="petName" class="font-pixel text-xs sm:text-sm text-[#6b5232]">Sprout</p>
+        <p id="petAge" class="font-body text-xs text-[#96805f]">Age: 0 days · Baby Chick</p>
+      </div>
+
+      <!-- Smartlink trap -->
+      <a href="https://asiafilm.org/4/d3b7a7a26feb558d40d0d1e4e2c0c79e" target="_blank" rel="noopener"
+         class="smartlink-btn mt-4 w-full max-w-sm text-center">
+        ✨ Claim 500 Free Farm Coins / Instant Max Energy
+      </a>
+
+      <!-- Action buttons -->
+      <div class="grid grid-cols-2 gap-3 mt-5 w-full max-w-md">
+        <button id="btnFeed"   class="sign-btn">🌾 Feed</button>
+        <button id="btnPet"    class="sign-btn">💗 Pet</button>
+        <button id="btnSleep"  class="sign-btn">😴 Sleep</button>
+        <button id="btnWash"   class="sign-btn">🫧 Wash</button>
+      </div>
+      <p id="statusMsg" class="font-body text-sm text-[#8a7458] mt-3 h-5"></p>
+      <button id="btnSwap" type="button" class="sign-btn w-full max-w-md mt-3 hidden">🔄 Switch Companion</button>
+    </section>
+
+    <!-- Right: Stats -->
+    <aside class="wood-panel p-5 sm:p-6 h-fit">
+      <h2 class="font-pixel text-xs sm:text-sm text-[#6b5232] mb-4">📋 Pet Stats</h2>
+      <div class="space-y-4" id="statsPanel">
+        <div class="stat-row">
+          <label class="stat-label">🍎 Hunger</label>
+          <div class="stat-track"><div id="barHunger" class="stat-fill hunger"></div></div>
+          <span id="numHunger" class="stat-num">100</span>
+        </div>
+        <div class="stat-row">
+          <label class="stat-label">💖 Affection</label>
+          <div class="stat-track"><div id="barAffection" class="stat-fill affection"></div></div>
+          <span id="numAffection" class="stat-num">100</span>
+        </div>
+        <div class="stat-row">
+          <label class="stat-label">⚡ Energy</label>
+          <div class="stat-track"><div id="barEnergy" class="stat-fill energy"></div></div>
+          <span id="numEnergy" class="stat-num">100</span>
+        </div>
+        <div class="stat-row">
+          <label class="stat-label">🧼 Cleanliness</label>
+          <div class="stat-track"><div id="barClean" class="stat-fill clean"></div></div>
+          <span id="numClean" class="stat-num">100</span>
+        </div>
+      </div>
+      <p class="font-body text-xs text-[#96805f] mt-5 leading-relaxed">
+        💡 Keep Affection high to earn Farm Coins passively! If any stat hits 0, your pet retires to the Greenhouse Memorial.
+      </p>
+      <a href="shop.html" class="nav-chip inline-block mt-4">🛒 Visit Seed Shop</a>
+    </aside>
+  </main>
+
+  <nav class="related-tools" aria-label="Related tools and back to home" style="width:100%;max-width:64rem;margin:0 auto;padding:0 1rem;">
+    <p style="margin:0 0 0.75rem;"><a href="/" style="color:#7a5a34;font-weight:700;text-decoration:none;">&larr; Back to Winarty home</a></p>
+    <h2 style="font-size:0.8rem;color:#a08a6a;margin:0 0 0.6rem;text-transform:uppercase;letter-spacing:0.12em;">More free games &amp; tools</h2>
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0.5rem;">
+      <li><a href="/celebrity-arena/" style="display:inline-block;padding:0.5rem 0.9rem;border:1px solid #d8c49a;border-radius:999px;color:#4a3b2a;text-decoration:none;font-size:0.85rem;">Celebrity Attribute Arena</a></li>
+      <li><a href="/brainrot-game/" style="display:inline-block;padding:0.5rem 0.9rem;border:1px solid #d8c49a;border-radius:999px;color:#4a3b2a;text-decoration:none;font-size:0.85rem;">Brainrot Higher or Lower</a></li>
+      <li><a href="/crypto-converter/" style="display:inline-block;padding:0.5rem 0.9rem;border:1px solid #d8c49a;border-radius:999px;color:#4a3b2a;text-decoration:none;font-size:0.85rem;">Free Crypto &amp; Fiat Converter</a></li>
+    </ul>
+  </nav>
+
+  <footer class="text-center font-body text-xs text-[#a08a6a] pb-8">
+    Cozy Farm Pet · A free cozy virtual pet simulator — play in your browser, no download needed.
+  </footer>
+
+  <!-- Adoption overlay: pick a species & name your pet -->
+  <div id="adoptOverlay" class="adopt-overlay hidden">
+    <div class="adopt-card">
+      <h2 class="font-pixel text-xs sm:text-sm text-[#6b5232]">🐣 Adopt a Companion</h2>
+      <p class="font-body text-sm text-[#8a7458] mt-3">Choose your farm friend and give them a name!</p>
+      <div id="speciesPicker" class="species-picker"></div>
+      <input id="petNameInput" type="text" maxlength="16" placeholder="Name your pet…" class="name-input">
+      <button id="adoptConfirm" class="sign-btn w-full mt-4">🌱 Adopt!</button>
+    </div>
+  </div>
+
+  <!-- Switch Companion panel (unlocked pets from collection) -->
+  <aside id="swapPanel" class="notebook-panel">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="font-pixel text-[10px] text-[#6b5232] leading-relaxed">Switch<br>Companion</h3>
+      <button id="swapClose" class="font-body text-xl text-[#8a7458] leading-none" type="button">✕</button>
+    </div>
+    <p class="font-body text-xs text-[#96805f] mb-3">Each pet keeps their own age & stats — switch anytime!</p>
+    <div id="swapList" class="space-y-2"></div>
+  </aside>
+
+  <!-- Pet Collector Notebook (slide-out dictionary) -->
+  <button id="notebookBtn" class="notebook-btn" type="button">📖 Pet Notebook</button>
+  <aside id="notebookPanel" class="notebook-panel">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="font-pixel text-[10px] text-[#6b5232] leading-relaxed">Pet Collector<br>Notebook</h3>
+      <button id="notebookClose" class="font-body text-xl text-[#8a7458] leading-none" type="button">✕</button>
+    </div>
+    <p class="font-body text-xs text-[#96805f] mb-3">Hatch Mystery Eggs to discover rare companions!</p>
+    <div id="notebookList" class="space-y-2"></div>
+  </aside>
+
+  <script src="script.js"></script>
+<script data-cfasync="false" src="https://bauval.org"></script>
+</body>
+</html>
