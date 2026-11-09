@@ -108,6 +108,16 @@ body {
 
 .converter-card { margin-bottom: 24px; }
 
+.page-title {
+  margin: 0 0 20px;
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #f1f5f9;
+  text-align: center;
+}
+
 .field-label {
   display: block;
   margin-bottom: 10px;
@@ -286,6 +296,22 @@ select optgroup { color: #64748b; font-size: 0.72rem; font-weight: 800; letter-s
 .ticker-change.up { color: #34d399; }
 .ticker-change.down { color: #fb7185; }
 .ticker-change.flat { color: #64748b; }
+
+/* ---------- FAQ ---------- */
+.faq-card { margin-top: 24px; }
+.faq-card h3 {
+  margin: 20px 0 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+}
+.faq-card h3:first-of-type { margin-top: 0; }
+.faq-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #94a3b8;
+}
 
 /* ---------- Ads ---------- */
 .ad-top { display: flex; justify-content: center; padding: 12px 16px 0; overflow: hidden; }
