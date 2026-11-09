@@ -202,6 +202,10 @@ body {
 .card:hover { transform: translateY(-4px); }
 .card h3 { font-size: 1.05rem; margin-bottom: 8px; color: var(--mint-700); }
 .card p { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.55; }
+.faq-card { max-width: 720px; margin: 48px auto 0; text-align: left; }
+.faq-card h2 { font-size: 1.4rem; color: var(--ink); margin-bottom: 14px; }
+.faq-card h3 { color: var(--ink); margin-top: 18px; }
+.faq-card p { margin-bottom: 0; }
 
 /* ---------- game page ---------- */
 .game-topbar {
