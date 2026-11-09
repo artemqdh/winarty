@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYTTBC0GEW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYTTBC0GEW');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Random Password Generator | Winarty</title>
+  <meta name="description" content="Generate strong, random passwords instantly in your browser. Choose length, uppercase, numbers, and symbols. Free and private — nothing is stored or sent." />
+  <link rel="canonical" href="https://winarty.com/password-generator/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Winarty Password Generator",
+    "url": "https://winarty.com/password-generator/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "Generate strong, random passwords instantly in your browser with customizable length and character options.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why do strong passwords matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Strong passwords are your first line of defense against unauthorized access to your accounts. Short or predictable passwords can be cracked in seconds by automated tools. A long password mixing uppercase and lowercase letters, numbers, and symbols makes brute-force attacks computationally infeasible, protecting your email, banking, and personal data from account takeover and identity theft."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the generated passwords truly random?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. This tool uses your browser's cryptographically secure random number generator (crypto.getRandomValues), not the predictable Math.random function. Every password is generated with real entropy suitable for security purposes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my password stored or transmitted anywhere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Passwords are generated locally in your browser using client-side JavaScript. They are never sent to a server, logged, or stored. Once you leave or refresh the page, the password is gone — be sure to copy it somewhere safe before navigating away."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long should my password be?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Security experts generally recommend at least 12–16 characters for important accounts. Longer is better: a 20-character random password provides far more security than a short complex one. Never reuse passwords across different sites."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- ===== Header ===== -->
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">W</span>
+        <span class="brand-text">
+          <strong>Winarty</strong>
+          <small>Password Generator</small>
+        </span>
+      </a>
+      <div class="header-right">
+        <a class="back-link" href="/">&larr; Back to Winarty home</a>
+      </div>
+    </header>
+
+    <main>
+
+      <h1 class="page-title">Secure Password Generator</h1>
+      <p class="page-subtitle">Generate strong random passwords instantly using your browser's cryptographically secure random number generator.</p>
+
+      <!-- ===== Generator ===== -->
+      <section class="card tool-card" aria-label="Password generator tool">
+
+        <!-- Output -->
+        <div class="password-display">
+          <code id="password-output" class="password-output" aria-live="polite">••••••••••••</code>
+        </div>
+
+        <div class="strength-row">
+          <div class="strength-bar" aria-hidden="true">
+            <span id="strength-fill" class="strength-fill"></span>
+          </div>
+          <span id="strength-label" class="strength-label">—</span>
+        </div>
+
+        <!-- Options -->
+        <div class="options">
+          <div class="option-row option-row--slider">
+            <label class="option-label" for="length-slider">Length</label>
+            <input id="length-slider" type="range" min="4" max="64" value="16" step="1" />
+            <span id="length-value" class="option-value">16</span>
+          </div>
+
+          <label class="option-toggle">
+            <input type="checkbox" id="opt-uppercase" checked />
+            <span class="toggle-box" aria-hidden="true"></span>
+            <span>Uppercase (A–Z)</span>
+          </label>
+          <label class="option-toggle">
+            <input type="checkbox" id="opt-lowercase" checked />
+            <span class="toggle-box" aria-hidden="true"></span>
+            <span>Lowercase (a–z)</span>
+          </label>
+          <label class="option-toggle">
+            <input type="checkbox" id="opt-numbers" checked />
+            <span class="toggle-box" aria-hidden="true"></span>
+            <span>Numbers (0–9)</span>
+          </label>
+          <label class="option-toggle">
+            <input type="checkbox" id="opt-symbols" checked />
+            <span class="toggle-box" aria-hidden="true"></span>
+            <span>Symbols (!@#$…)</span>
+          </label>
+        </div>
+
+        <div class="tool-actions">
+          <button id="generate-btn" class="btn btn-primary" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36M21 3v6h-6"/></svg>
+            Generate
+          </button>
+          <button id="copy-btn" class="btn btn-secondary" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+      </section>
+
+      <!-- ===== Tips ===== -->
+      <section class="card tips-card" aria-label="Password security tips">
+        <h2>Password tips</h2>
+        <ul class="tips-list">
+          <li>Use at least 12–16 characters for important accounts.</li>
+          <li>Never reuse passwords across different websites.</li>
+          <li>A password manager can store and autofill unique passwords for you.</li>
+          <li>Enable two-factor authentication wherever it's offered.</li>
+        </ul>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section class="card market-card faq-card" aria-label="Frequently asked questions">
+        <h2>Frequently Asked Questions</h2>
+        <h3>Why do strong passwords matter?</h3>
+        <p>Strong passwords are your first line of defense against unauthorized access to your accounts. Short or predictable passwords can be cracked in seconds by automated tools. A long password mixing uppercase and lowercase letters, numbers, and symbols makes brute-force attacks computationally infeasible, protecting your email, banking, and personal data from account takeover and identity theft.</p>
+        <h3>Are the generated passwords truly random?</h3>
+        <p>Yes. This tool uses your browser's cryptographically secure random number generator (crypto.getRandomValues), not the predictable Math.random function. Every password is generated with real entropy suitable for security purposes.</p>
+        <h3>Is my password stored or transmitted anywhere?</h3>
+        <p>No. Passwords are generated locally in your browser using client-side JavaScript. They are never sent to a server, logged, or stored. Once you leave or refresh the page, the password is gone — be sure to copy it somewhere safe before navigating away.</p>
+        <h3>How long should my password be?</h3>
+        <p>Security experts generally recommend at least 12–16 characters for important accounts. Longer is better: a 20-character random password provides far more security than a short complex one. Never reuse passwords across different sites.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ===== Related tools ===== -->
+  <nav class="related-tools" aria-label="Related tools and back to home">
+    <p><a href="/">&larr; Back to Winarty home</a></p>
+    <h2>More free tools &amp; games</h2>
+    <ul>
+      <li><a href="/word-counter/">Free Word Counter</a></li>
+      <li><a href="/case-converter/">Free Case Converter</a></li>
+      <li><a href="/flowstate-pomodoro/">Free Pomodoro Focus Timer</a></li>
+      <li><a href="/crypto-converter/">Crypto &amp; Fiat Converter</a></li>
+    </ul>
+  </nav>
+
+  <footer class="site-footer">
+    Winarty — passwords are generated locally and never leave your device
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

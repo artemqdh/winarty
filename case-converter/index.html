@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYTTBC0GEW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYTTBC0GEW');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Case Converter Tool - Uppercase, Lowercase, Title Case | Winarty</title>
+  <meta name="description" content="Convert text to UPPERCASE, lowercase, Title Case, Sentence case, or toggle case instantly. Free, private, and runs entirely in your browser." />
+  <link rel="canonical" href="https://winarty.com/case-converter/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Winarty Case Converter",
+    "url": "https://winarty.com/case-converter/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "Convert text to uppercase, lowercase, title case, sentence case, or toggle case instantly in your browser.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I use the case converter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simply paste or type your text into the input box, then click one of the conversion buttons — UPPERCASE, lowercase, Title Case, Sentence case, or Toggle case. The converted result appears instantly in the output box, ready to copy with one click. No registration or installation is needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Title Case and Sentence case?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Title Case capitalizes the first letter of every word (like 'The Quick Brown Fox'), while Sentence case capitalizes only the first letter of each sentence and leaves the rest lowercase (like 'The quick brown fox'). Title Case is common in headings and titles; Sentence case is typical in paragraphs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my text private when using this tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All text conversion happens locally in your browser using client-side JavaScript. Your text is never uploaded to a server or stored anywhere, so it's safe for confidential drafts, code snippets, and personal writing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert text with special characters or other languages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The converter uses standard Unicode-aware JavaScript string methods, so it handles accented characters, umlauts, and other supported scripts correctly. Some edge cases with uncommon characters may behave differently than in word processors."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- ===== Header ===== -->
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">W</span>
+        <span class="brand-text">
+          <strong>Winarty</strong>
+          <small>Case Converter</small>
+        </span>
+      </a>
+      <div class="header-right">
+        <a class="back-link" href="/">&larr; Back to Winarty home</a>
+      </div>
+    </header>
+
+    <main>
+
+      <h1 class="page-title">Free Case Converter</h1>
+      <p class="page-subtitle">Convert text to uppercase, lowercase, title case, sentence case, or toggle case — instantly and privately.</p>
+
+      <!-- ===== Converter ===== -->
+      <section class="card tool-card" aria-label="Case converter tool">
+
+        <div class="field">
+          <label class="field-label" for="input-text">Input text</label>
+          <textarea id="input-text" class="text-area" placeholder="Type or paste your text here…" spellcheck="false"></textarea>
+        </div>
+
+        <div class="mode-buttons" role="group" aria-label="Case conversion mode">
+          <button type="button" class="mode-btn is-active" data-mode="upper">UPPERCASE</button>
+          <button type="button" class="mode-btn" data-mode="lower">lowercase</button>
+          <button type="button" class="mode-btn" data-mode="title">Title Case</button>
+          <button type="button" class="mode-btn" data-mode="sentence">Sentence case</button>
+          <button type="button" class="mode-btn" data-mode="toggle">tOGGLE cASE</button>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="output-text">Output</label>
+          <div class="output-box">
+            <textarea id="output-text" class="text-area text-area--output" readonly placeholder="Converted text will appear here…"></textarea>
+            <button id="copy-btn" class="btn btn-primary copy-btn" type="button" disabled>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copy
+            </button>
+          </div>
+        </div>
+
+        <div class="tool-actions">
+          <button id="sample-btn" class="btn btn-secondary" type="button">Try sample text</button>
+          <button id="clear-btn" class="btn btn-secondary" type="button">Clear</button>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section class="card market-card faq-card" aria-label="Frequently asked questions">
+        <h2>Frequently Asked Questions</h2>
+        <h3>How do I use the case converter?</h3>
+        <p>Simply paste or type your text into the input box, then click one of the conversion buttons — UPPERCASE, lowercase, Title Case, Sentence case, or Toggle case. The converted result appears instantly in the output box, ready to copy with one click. No registration or installation is needed.</p>
+        <h3>What is the difference between Title Case and Sentence case?</h3>
+        <p>Title Case capitalizes the first letter of every word (like 'The Quick Brown Fox'), while Sentence case capitalizes only the first letter of each sentence and leaves the rest lowercase (like 'The quick brown fox'). Title Case is common in headings and titles; Sentence case is typical in paragraphs.</p>
+        <h3>Is my text private when using this tool?</h3>
+        <p>Yes. All text conversion happens locally in your browser using client-side JavaScript. Your text is never uploaded to a server or stored anywhere, so it's safe for confidential drafts, code snippets, and personal writing.</p>
+        <h3>Can I convert text with special characters or other languages?</h3>
+        <p>Yes. The converter uses standard Unicode-aware JavaScript string methods, so it handles accented characters, umlauts, and other supported scripts correctly. Some edge cases with uncommon characters may behave differently than in word processors.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ===== Related tools ===== -->
+  <nav class="related-tools" aria-label="Related tools and back to home">
+    <p><a href="/">&larr; Back to Winarty home</a></p>
+    <h2>More free tools &amp; games</h2>
+    <ul>
+      <li><a href="/word-counter/">Free Word Counter</a></li>
+      <li><a href="/password-generator/">Secure Password Generator</a></li>
+      <li><a href="/flowstate-pomodoro/">Free Pomodoro Focus Timer</a></li>
+      <li><a href="/crypto-converter/">Crypto &amp; Fiat Converter</a></li>
+    </ul>
+  </nav>
+
+  <footer class="site-footer">
+    Winarty — free browser tools · your text never leaves your device
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

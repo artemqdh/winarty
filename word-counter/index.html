@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYTTBC0GEW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYTTBC0GEW');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Word Counter - Count Characters & Reading Time | Winarty</title>
+  <meta name="description" content="Count words, characters, sentences, paragraphs, and estimated reading time instantly in your browser. Free, private, and no sign-up required." />
+  <link rel="canonical" href="https://winarty.com/word-counter/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Winarty Word Counter",
+    "url": "https://winarty.com/word-counter/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "Count words, characters, sentences, paragraphs, and estimated reading time instantly in your browser.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is reading time calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reading time is estimated by dividing your total word count by 200 words per minute, which is the average silent reading speed for adults. For example, a 1,000-word article is estimated at about 5 minutes to read. This is an approximation — your actual speed may vary depending on the complexity of the text."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my text stored or sent anywhere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The Winarty word counter runs entirely in your browser using client-side JavaScript. Your text is never uploaded to a server, stored, or shared with third parties."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What counts as a 'word' or 'character'?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A word is any sequence of characters separated by whitespace. We also report character counts with and without spaces, so you can check limits for social media posts, essays, or SEO descriptions."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- ===== Header ===== -->
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">W</span>
+        <span class="brand-text">
+          <strong>Winarty</strong>
+          <small>Word Counter</small>
+        </span>
+      </a>
+      <div class="header-right">
+        <a class="back-link" href="/">&larr; Back to Winarty home</a>
+      </div>
+    </header>
+
+    <main>
+
+      <h1 class="page-title">Free Word Counter</h1>
+      <p class="page-subtitle">Paste or type your text below to instantly count words, characters, sentences, paragraphs, and estimated reading time.</p>
+
+      <!-- ===== Counter tool ===== -->
+      <section class="card tool-card" aria-label="Word counter tool">
+
+        <textarea id="text-input" class="text-area" placeholder="Start typing or paste your text here…" spellcheck="false" aria-label="Text to analyze"></textarea>
+
+        <div class="tool-actions">
+          <button id="clear-btn" class="btn btn-secondary" type="button">Clear</button>
+          <button id="sample-btn" class="btn btn-secondary" type="button">Try sample text</button>
+          <button id="copy-stats-btn" class="btn btn-primary" type="button" disabled>Copy stats</button>
+        </div>
+
+        <div class="stats-grid" id="stats-grid">
+          <div class="stat-box">
+            <span class="stat-value" id="stat-words">0</span>
+            <span class="stat-label">Words</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value" id="stat-chars">0</span>
+            <span class="stat-label">Characters</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value" id="stat-chars-no-space">0</span>
+            <span class="stat-label">No spaces</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value" id="stat-sentences">0</span>
+            <span class="stat-label">Sentences</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-value" id="stat-paragraphs">0</span>
+            <span class="stat-label">Paragraphs</span>
+          </div>
+          <div class="stat-box stat-box--accent">
+            <span class="stat-value" id="stat-reading-time">0 min</span>
+            <span class="stat-label">Reading time</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section class="card market-card faq-card" aria-label="Frequently asked questions">
+        <h2>Frequently Asked Questions</h2>
+        <h3>How is reading time calculated?</h3>
+        <p>Reading time is estimated by dividing your total word count by 200 words per minute, which is the average silent reading speed for adults. For example, a 1,000-word article is estimated at about 5 minutes to read. This is an approximation — your actual speed may vary depending on the complexity of the text.</p>
+        <h3>Is my text stored or sent anywhere?</h3>
+        <p>No. The Winarty word counter runs entirely in your browser using client-side JavaScript. Your text is never uploaded to a server, stored, or shared with third parties.</p>
+        <h3>What counts as a 'word' or 'character'?</h3>
+        <p>A word is any sequence of characters separated by whitespace. We also report character counts with and without spaces, so you can check limits for social media posts, essays, or SEO descriptions.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ===== Related tools ===== -->
+  <nav class="related-tools" aria-label="Related tools and back to home">
+    <p><a href="/">&larr; Back to Winarty home</a></p>
+    <h2>More free tools &amp; games</h2>
+    <ul>
+      <li><a href="/case-converter/">Free Case Converter</a></li>
+      <li><a href="/password-generator/">Secure Password Generator</a></li>
+      <li><a href="/flowstate-pomodoro/">Free Pomodoro Focus Timer</a></li>
+      <li><a href="/crypto-converter/">Crypto &amp; Fiat Converter</a></li>
+    </ul>
+  </nav>
+
+  <footer class="site-footer">
+    Winarty — free browser tools · your text never leaves your device
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
