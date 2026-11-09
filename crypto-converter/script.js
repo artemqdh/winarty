@@ -1,5 +1,5 @@
 /* ============================================================
-   NovaFX — Crypto, Metals & Fiat Currency Converter
+   Winarty — Crypto, Metals & Fiat Currency Converter
    Crypto : CoinGecko public API (USD prices)
    Metals : gold-api.com (USD per troy ounce)
    Fiat   : open.er-api.com (units per 1 USD)
